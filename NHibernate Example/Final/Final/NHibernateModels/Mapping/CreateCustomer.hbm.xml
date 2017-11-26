@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping assembly="Final" namespace="Final.NHibernateModels" auto-import="true" xmlns="urn:nhibernate-mapping-2.2">
+  <sql-query name="spCreateCustomer">
+    <query-param name="Id" type="int"/>
+    <query-param name="FirstName" type="string"/>
+    <query-param name="LastName" type="string"/>
+    <query-param name="Status"/>
+    exec spCreateCustomer :Id, :FirstName, :LastName, :Status
+  </sql-query>
+</hibernate-mapping>

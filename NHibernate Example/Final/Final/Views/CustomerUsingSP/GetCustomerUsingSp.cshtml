@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Final.NHibernateModels.Customer>
+
+@{
+    ViewBag.Title = "GetCustomerUsingSp";
+}
+
+<h2>Get Customers Using Stored Procedure</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateCustomer")
+</p>
+@using (Html.BeginForm("GetCustomerByLastName", "CustomerUsingSP", new { lname = "lastname" }))
+{
+    @Html.Label("Search by Last Name: ")
+    <input type="text" id="lname" name="lastName" />
+    <input type="submit" value="Search" />
+} 
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditCustomer", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "DeleteCustomer", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

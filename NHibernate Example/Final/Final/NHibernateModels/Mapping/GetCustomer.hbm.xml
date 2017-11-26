@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping assembly="Final" namespace="Final.NHibernateModels" auto-import="true" xmlns="urn:nhibernate-mapping-2.2">
+  <sql-query name="sp_GetCustomers">
+    <return class="Customer">
+      <return-property column="Id"/>
+      <return-property column="FirstName"/>
+      <return-property column="LastName"/>
+      <return-property column="Status"/>
+      exec sp_GetCustomers
+    </return>
+  </sql-query>
+</hibernate-mapping>

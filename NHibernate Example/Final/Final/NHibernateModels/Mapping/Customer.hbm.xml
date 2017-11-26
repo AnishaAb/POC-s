@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping assembly="Final" namespace="Final.NHibernateModels" auto-import="true" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="Customer" table="Customers">
+    <id name="Id" column="Id" type="int">
+      <generator class="increment"/>
+    </id>
+    <property name="FirstName"/>
+    <property name="LastName"/>
+    <property name="Status"/>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Simple NHibernate Mapping Examples</h1>  
+    <p>In this project we would be working on a simple Model Class called Customer. 
+    We are trying to implement nhibernate mapping to do various crud operations </p>  
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Crud Operation on Customer class using table or view</h2>
+        <p>
+            @Html.ActionLink("Customer List", "FetchCustomerDetails", "Customer")
+        </p>
+        
+    </div>
+    <div class="col-md-4">
+        <h2>Crud Operation on Customer class using stored procedure</h2>
+        <p>
+            @Html.ActionLink("Customer List", "GetCustomerUsingSp", "CustomerUsingSP")
+        </p>
+
+    </div>
+    
+   
+</div>

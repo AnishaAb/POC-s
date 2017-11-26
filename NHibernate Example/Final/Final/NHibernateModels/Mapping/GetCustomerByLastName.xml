@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping assembly="Final" namespace="Final.NHibernateModels" auto-import="true" xmlns="urn:nhibernate-mapping-2.2">
+  <sql-query name="GetCustomerByLastName">
+    <query-param name="lname" type="string"></query-param>
+    <return class="Customer">
+      <return-property column="Id"/>
+      <return-property column="FirstName"/>
+      <return-property column="LastName"/>
+      <return-property column="Status"/>
+      exec GetCustomerByLastName :lname
+    </return>
+  </sql-query>
+</hibernate-mapping>
